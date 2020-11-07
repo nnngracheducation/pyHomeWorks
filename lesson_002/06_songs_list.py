@@ -21,6 +21,9 @@ violator_songs_list = [
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
 
 # TODO здесь ваш код
+sum_lenght = violator_songs_list[3][1] + violator_songs_list[5][1] + violator_songs_list[-1][1]
+sum_lenght = round(sum_lenght, 2)
+print('Три песни звучат ' + str(sum_lenght) + ' минут')
 
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
@@ -39,3 +42,6 @@ violator_songs_dict = {
 #   А другие три песни звучат ХХХ минут
 
 # TODO здесь ваш код
+sum_lenght = violator_songs_list[1][1] + violator_songs_list[-3][1] + violator_songs_list[-2][1]
+sum_lenght = round(sum_lenght, 2)
+print('А другие три песни звучат ' + str(sum_lenght) + ' минут')

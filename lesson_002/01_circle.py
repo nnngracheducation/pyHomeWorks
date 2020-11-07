@@ -10,6 +10,10 @@ radius = 42
 #       пи возьмите равным 3.1415926
 #       точность указывается в функции round()
 # TODO здесь ваш код
+PI = 3.1415926
+square_of_round = PI * radius ** 2
+print(round(square_of_round, 4))
+
 
 
 # Далее, пусть есть координаты точки
@@ -24,12 +28,18 @@ point = (23, 34)
 #       квадратный корень - это возведение в степень 0.5
 #       операции сравнения дают булевы константы True и False
 # TODO здесь ваш код
+first_point_destination_to_center = (point[0] ** 2 + point[1] ** 2) ** 0.5
+is_first_point_in_circe = first_point_destination_to_center < radius
+print(is_first_point_in_circe)
 
 # Аналогично для другой точки
 point_2 = (30, 30)
 # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
 # Или False, если точка лежит вовне круга.
 # TODO здесь ваш код
+second_point_destination_to_center = (point[0] ** 2 + point[1] ** 2) ** 0.5
+is_second_point_in_circe = second_point_destination_to_center < radius
+print(is_second_point_in_circe)
 
 # Пример вывода на консоль:
 #
