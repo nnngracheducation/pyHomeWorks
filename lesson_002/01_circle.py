@@ -37,7 +37,7 @@ point_2 = (30, 30)
 # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
 # Или False, если точка лежит вовне круга.
 # TODO здесь ваш код
-second_point_destination_to_center = (point[0] ** 2 + point[1] ** 2) ** 0.5
+second_point_destination_to_center = (point_2[0] ** 2 + point_2[1] ** 2) ** 0.5
 is_second_point_in_circe = second_point_destination_to_center < radius
 print(is_second_point_in_circe)
 

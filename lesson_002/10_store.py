@@ -33,15 +33,7 @@ store = {
 
 # Рассчитать на какую сумму лежит каждого товара на складе
 # например для ламп
-
-lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
-# или проще (/сложнее ?)
-lamp_code = goods['Лампа']
-lamps_item = store[lamp_code][0]
-lamps_quantity = lamps_item['quantity']
-lamps_price = lamps_item['price']
-lamps_cost = lamps_quantity * lamps_price
-print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, 'руб')
+# ...
 
 # Вывести стоимость каждого товара на складе: один раз распечать сколько всего столов, стульев и т.д. на складе
 # Формат строки <товар> - <кол-во> шт, стоимость <общая стоимость> руб
@@ -50,6 +42,51 @@ print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, '�
 # Это задание на ручное вычисление - что бы потом понять как работают циклы и насколько с ними проще жить.
 
 # TODO здесь ваш код
+PRICE = 'price'
+LAMP = 'Лампа'
+TABLE = 'Стол'
+SOFA = 'Диван'
+CHAIR = 'Стул'
+QUANTITY = 'quantity'
+
+lamp_index = goods[LAMP]
+lamps_quantity = store[lamp_index][0][QUANTITY]
+lamps_cost = store[lamp_index][0][QUANTITY] * store[lamp_index][0][PRICE]
+print(LAMP, '-', lamps_quantity, 'шт, стоимость', lamps_cost, 'руб')
+
+table_index = goods[TABLE]
+table_quantity = store[table_index][0][QUANTITY] + store[table_index][1][QUANTITY]
+table_cost = store[table_index][0][QUANTITY] * store[table_index][0][PRICE] +\
+             store[table_index][1][QUANTITY] * store[table_index][1][PRICE]
+print(TABLE, '-', table_quantity, 'шт, стоимость', table_cost, 'руб')
+
+sofa_index = goods[SOFA]
+sofa_quantity = store[sofa_index][0][QUANTITY]
+sofa_cost = store[sofa_index][0][QUANTITY] * store[sofa_index][0][PRICE] + \
+            store[sofa_index][1][QUANTITY] * store[sofa_index][1][PRICE]
+print(SOFA, '-', sofa_quantity, 'шт, стоимость', sofa_cost, 'руб')
+
+chair_index = goods[CHAIR]
+chair_quantity = store[chair_index][0][QUANTITY]
+chair_cost = store[chair_index][0][QUANTITY] * store[chair_index][0][PRICE] + \
+             store[chair_index][1][QUANTITY] * store[chair_index][1][PRICE] + \
+             store[chair_index][2][QUANTITY] * store[chair_index][2][PRICE]
+print(CHAIR, '-', chair_quantity, 'шт, стоимость', chair_cost, 'руб')
+print('===========================================================')
+
+# Вывести стоимость каждого товара на складе: один раз распечать сколько всего столов, стульев и т.д. на складе
+# Формат строки <товар> - <кол-во> шт, стоимость <общая стоимость> руб
+print(LAMP, '-', store[lamp_index][0][QUANTITY], 'шт, стоимость', store[lamp_index][0][PRICE], 'руб')
+print(TABLE, '-', store[table_index][0][QUANTITY], 'шт, стоимость', store[table_index][0][PRICE], 'руб')
+print(TABLE, '-', store[table_index][1][QUANTITY], 'шт, стоимость', store[table_index][1][PRICE], 'руб')
+print(SOFA, '-', store[sofa_index][0][QUANTITY], 'шт, стоимость', store[sofa_index][0][PRICE], 'руб')
+print(SOFA, '-', store[sofa_index][1][QUANTITY], 'шт, стоимость', store[sofa_index][1][PRICE], 'руб')
+print(CHAIR, '-', store[chair_index][0][QUANTITY], 'шт, стоимость', store[chair_index][0][PRICE], 'руб')
+print(CHAIR, '-', store[chair_index][1][QUANTITY], 'шт, стоимость', store[chair_index][1][PRICE], 'руб')
+print(CHAIR, '-', store[chair_index][2][QUANTITY], 'шт, стоимость', store[chair_index][2][PRICE], 'руб')
+
+
+
 
 ##########################################################################################
 # ВНИМАНИЕ! После того как __ВСЯ__ домашняя работа сделана и запушена на сервер,         #

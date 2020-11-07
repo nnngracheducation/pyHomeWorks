@@ -42,6 +42,8 @@ violator_songs_dict = {
 #   А другие три песни звучат ХХХ минут
 
 # TODO здесь ваш код
-sum_lenght = violator_songs_list[1][1] + violator_songs_list[-3][1] + violator_songs_list[-2][1]
+sum_lenght = violator_songs_dict['Sweetest Perfection'] \
+             + violator_songs_dict['Policy of Truth'] \
+             + violator_songs_dict['Blue Dress']
 sum_lenght = round(sum_lenght, 2)
 print('А другие три песни звучат ' + str(sum_lenght) + ' минут')
